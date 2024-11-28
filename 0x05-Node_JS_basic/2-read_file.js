@@ -15,7 +15,7 @@ function handleData(data) {
             }
         }
     }
-    console.log(`Number of students: $${cs.length + swe.length}`);
+    console.log(`Number of students: ${cs.length + swe.length}`);
     console.log(`Number of students in CS: ${cs.length}. List: ${cs.join(', ')}`);
     console.log(`Number of students in SWE: ${swe.length}. List: ${swe.join(', ')}`);
 }
