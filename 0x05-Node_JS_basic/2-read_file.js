@@ -4,7 +4,6 @@ function handleData(data) {
     const lines = data.split('\n').filter((line) => line !== 'firstname,lastanme,age,field');
     const cs = [];
     const swe = [];
-
     const students = lines.map((line) => line.split(','));
     for (const student of students) {
         if (student) {
@@ -19,7 +18,6 @@ function handleData(data) {
     console.log(`Number of students in CS: ${cs.length}. List: ${cs.join(', ')}`);
     console.log(`Number of students in SWE: ${swe.length}. List: ${swe.join(', ')}`);
 }
-
 function countStudents(filePath) {
     try {
         const data = fs.readFileSync(filePath, 'utf-8');
