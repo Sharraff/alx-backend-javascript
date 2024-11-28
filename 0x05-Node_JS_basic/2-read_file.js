@@ -18,6 +18,7 @@ function handleData(data) {
     console.log(`Number of students in CS: ${cs.length}. List: ${cs.join(', ')}`);
     console.log(`Number of students in SWE: ${swe.length}. List: ${swe.join(', ')}`);
 }
+
 function countStudents(filePath) {
     try {
         const data = fs.readFileSync(filePath, 'utf-8');
@@ -26,4 +27,5 @@ function countStudents(filePath) {
         throw new Error('Cannot load the database');
     }
 }
+
 module.exports = countStudents;

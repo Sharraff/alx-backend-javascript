@@ -27,6 +27,7 @@ function handleData(data) {
         + `Number of students in SWE: ${swe.length}. List: ${swe.join(', ')}`
     );
 }
+
 async function countStudents(filePath) {
     return new Promise((resolve, reject) => {
         fs.readFile(filePath, 'utf8', (error, data) => {
@@ -38,10 +39,12 @@ async function countStudents(filePath) {
         });
     });
 }
+
 app.get('/', (req, res) => {
     res.setHeader('Content-Type', 'text/plain');
     res.end('Hello Holberton School!');
 });
+
 app.get('/students', async (req, res) => {
     res.setHeader('Content-Type', 'text/plain');
     try {
@@ -53,7 +56,9 @@ app.get('/students', async (req, res) => {
         res.send(`This is the list of our students\n${err.message}`);
     }
 });
+
 app.listen(port, () => {
     console.log(`Server running on port: ${port}`);
 });
+
 module.exports = app;

@@ -1,7 +1,4 @@
-const { rejects } = require('assert');
-const { error } = require('console');
 const fs = require('fs');
-const { resolve } = require('path');
 
 function handleData(data) {
     const lines = data.split('\n').filter((line) => line !== 'firstname,lastname,age,field');
@@ -21,6 +18,7 @@ function handleData(data) {
     console.log(`Number of students in CS: ${cs.length}. List: ${cs.join(', ')}`);
     console.log(`Number of students in SWE: ${swe.length}. List: ${swe.join(', ')}`);
 }
+
 function countStudents(filePath) {
     return new Promise((resolve, reject) => {
         fs.readFile(filePath, 'utf-8', (error, data) => {
@@ -33,4 +31,5 @@ function countStudents(filePath) {
         });
     });
 }
+
 module.exports = countStudents;

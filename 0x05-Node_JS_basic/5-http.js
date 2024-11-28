@@ -4,7 +4,6 @@ const host = '127.0.0.1';
 const port = 1245;
 
 const fs = require('fs');
-const { error } = require('console');
 
 function handleData(data) {
     const lines = data.split('\n').filter((line) => line !== '');
@@ -40,6 +39,7 @@ async function countStudents(filePath) {
         });
     });
 }
+
 const app = http.createServer(async (req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain; charset=utf-8');
@@ -52,6 +52,7 @@ const app = http.createServer(async (req, res) => {
         res.end('Hello Holberton School!');
     }
 });
+
 app.listen(port, host, () => {
     console.log(`server running at http://${host}:${port}`);
 });
